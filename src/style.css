@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  background-image: url(./images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /*cobrir toda a área*/
+
+  min-height: 100vh; /*Colocar o body pra ocupar no min a altura da janela de exibição*/
+}
+
+.top {
+  text-align: center; /*centralizar*/
+  padding: 180px 0 45px; /*MEXI SOZINHO AQUII -------------------------*/
+}
+
+.top h1 {
+  color: rgb(255, 255, 0);
+  font-size: 45px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+}
+
+.events-slider { /*Estilizar o espaço dos cards*/
+  display: flex; /*Botar cards e botoes lado a lado*/
+  justify-content: center;/*centralizando ao card*/
+  gap: 80px;
+  align-items: center; /*Colocar na mesma linha*/
+}
+
+.event-list { /*estilizado a lista*/
+  width: 330px; /*Largura do card*/
+  height: 520px; /*Altura do card*/
+  position: relative;/*Vai ajudar o position do cartao*/
+}
+
+.btn-seta {
+  background-color: rgba(255, 255, 255, 0.336);
+  width: 70px;
+  height: 70px;
+
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+
+  display: flex; /*Fiz isso para ajustar a visualização no celular*/
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.2s ease-in-out; /*Elemento que sofre a trans.*/
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;/*O valor fora é posicionamento da sombra*/
+}
+
+.btn-seta.btn-voltar { /*Tudo junto porque tem 2 classes*/
+  transform: rotateY(180deg);
+}
+
+.btn-seta:hover {
+  background-color: rgba(204, 201, 201, 0.685);
+}
+
+.cartao {
+  opacity: 0; /*Esconder todos os cartões*/
+  height: 100%; /*vai ocupar 100% da div pai (event-slider)*/
+  position: absolute; /*Os cards vão ficar empilhados*/
+  padding: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;/*Transição entre os cards*/
+
+  display: flex; /*Fiz isso para ajustar tudo dentro do card*/
+  flex-direction: column; /*Ajudou o display flex*/
+  justify-content: space-between; /*centralizando dentro do card*/
+}
+
+.cartao.selecionado {
+  opacity: 1; /*Mostrando só o 1º cartao*/
+  z-index: 1; /*Forçar o card selecionado a ser o primeiro*/
+}
+
+.cartao .event-img { /*Ajustar a img do card*/
+  width: 100%;
+  max-height: 280px;
+}
+.cartao .event-name { /*Ajustar o título do card*/
+  background-color: rgba(179, 177, 185, 0.7);
+  padding: 8px 10px;
+  border-radius: 10px 10px 0 0;
+  color: rgb(255, 255, 0);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-align: center;
+}
+.cartao .descricao { /*ajustando a parte inferior do card*/
+  background-color: rgba(65, 65, 65, 0.8);
+  border-radius: 0 0 10px 10px;
+}
+
+.cartao .descricao .date{ /*Ajustando a data*/
+  background-color: rgba(46, 46, 46, 0.7);
+  font-size: 22px;
+  color: rgb(255, 255, 0);
+  padding: 8px;
+  text-align: center;
+}
+
+.cartao .descricao .texto { /*texto do card*/
+  font-size: 16px;
+  padding: 12px;
+  text-align: justify;
+  max-height: 110px; 
+  overflow-y: auto; /*Colocar scroll se o texto vazar, foi colocado o z-index no card selecionado*/
+  color: rgb(255, 255, 0);
+}
+
+a {
+  font-size: 16px;
+  color: rgb(255, 255, 0);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.cartao.fundo-1 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-2 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-3 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-4 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-5 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-6 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-7 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-8 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-9 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+.cartao.fundo-10 {
+  background: url('./images/back-card.png') no-repeat;
+}
+
+@media (max-width: 620px) {
+  .top{
+    padding: 20px 0;
+  }
+
+  .events-slider{
+    padding: 0 15px;
+    gap: 10px;
+  }
+
+  .btn-seta{
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+  }
+  .events-list{
+    height: 500px;
+  }
+}
